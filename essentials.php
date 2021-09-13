@@ -1,3 +1,5 @@
+<?php
+
 /**
  * multi-byte version of str_replace, handles arrays in pattern and replacement
  *
@@ -38,3 +40,5 @@ function mb_replace($pattern, $replacement, $str, $escape = true)
 
     return $str;
 } 
+
+?>
