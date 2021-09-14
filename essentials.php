@@ -52,9 +52,9 @@ function func_GetInput($name, $limit = 0, $a2z = false)
 /**
  * multi-byte version of str_replace, handles arrays in pattern and replacement
  *
- * @use: mb_replace(['<', '>', '"', '\''], ['&lt;', '&gt;', '&quot;', '&#39;'], $str);
- * @use: mb_replace("*search.this*", "replace with this", $str);
- * @use: mb_replace("[^a-zA-Z0-9 ]", "", $str, false);
+ * @uses mb_replace(['<', '>', '"', '\''], ['&lt;', '&gt;', '&quot;', '&#39;'], $str);
+ * @uses mb_replace("*search.this*", "replace with this", $str);
+ * @uses mb_replace("[^a-zA-Z0-9 ]", "", $str, false);
  *
  * @param array|string	$pattern	needle, can be a regex
  * @param array|string	$replacement
