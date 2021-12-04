@@ -1,4 +1,14 @@
 <?php
+/*
+* - added an check on isset($table[0]) because that threw an error once
+* - utf8mb4 instead of utf8 as default as recommended in the docs
+* - mb_substr instead of substr since we use utf8
+* - added 3 function aliases for easier understanding (see CHANGED)
+* - corrected some spelling and grammar in comments
+* - removed a few "@throws Exception" where it wasn't throwing anything
+* - added some line breaks for consistency
+* - moved orWhere() after where() because... OCD I guess
+*/
 
 /**
  * MysqliDb Class
@@ -560,7 +570,10 @@ class MysqliDb
         preg_match_all("/(from|into|update|join) [\\'\\´]?([a-zA-Z0-9_-]+)[\\'\\´]?/i", $query, $matches);
         list($from_table, $from, $table) = $matches;
 
-        return str_replace($table[0], self::$prefix.$table[0], $query);
+        // CHANGED
+        if ( isset($table[0]) )
+            $query = str_replace($table[0], self::$prefix.$table[0], $query);
+        return $query;
     }
 
     /**
@@ -818,7 +831,7 @@ class MysqliDb
 
     /**
      * CHANGED
-     *  get one row (make it more obvious this is a row)
+     * get one row (make it more obvious this is a row)
      */
     public function getRow($tableName, $columns = '*')
     {
@@ -827,8 +840,8 @@ class MysqliDb
 
     /**
      * CHANGED
-     *  get one column (make it more obvious this is a column)
-     *    getValue: parameters in same order as get()
+     * get one column (make it more obvious this is a column)
+     *  - parameters in same order as get()
      */
     public function getCol($tableName, $limit, $column)
     {
@@ -837,7 +850,7 @@ class MysqliDb
 
     /**
      * CHANGED
-     *  get one value (shorter)
+     * get one value (shorter)
      */
     public function getV($tableName, $column)
     {
@@ -1039,8 +1052,8 @@ class MysqliDb
      */
     public function onDuplicate($updateColumns, $lastInsertId = null)
     {
-        $this->_updateColumns = $updateColumns;
         $this->_lastInsertId = $lastInsertId;
+        $this->_updateColumns = $updateColumns;
         return $this;
     }
 
