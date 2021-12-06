@@ -1,12 +1,11 @@
 # PHP-mini-website-framework
-So far, there are only a few simple PHP functions. More coming soon...
 
-I'm developing this framework for a small, private website:
- - free sources (MIT), no dependencies
- - full control over the presentation (no libraries)
+I developed this framework for a small, private website:
+ - easy database wrapper (with bind)
+ - secure register/login interface, with throttling
+ - free source code (MIT), no other dependencies
+ - full control over the presentation (no libraries, .css included)
  - no tracking of external downloads (fonts, .js)
- - easy database wrapper
- - secure login and user moderation
 
 I hope I can set up a server specifically for testing this framework in the near future.
 
