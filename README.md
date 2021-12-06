@@ -3,11 +3,11 @@
  - secure register/login interface (with throttling and bot detection)
  - easy to use, complete database wrapper (using bind)
  - ready to use for a small, private website
- - free source code (MIT), no other dependencies (no tracking)
+ - free source code (MIT), no other dependencies (ie. no tracking)
  - full control over the presentation (ie. no libraries, .css included)
- - plenty of comments with explananations in the source code
+ - plenty of comments in the source code
 
-Your Feedback in "Issues" is welcome! So are pull requests!
+Your feedback in "Issues" is welcome! So are pull requests!
 
 # Installation
 
